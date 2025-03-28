@@ -1,0 +1,21 @@
+version: 4.2.25
+session: 67e6d50687feff874f2ebc2a
+steps:
+  - prompt: Click on the "Subscribe" button in the header.
+    commands:
+      - command: hover-text
+        text: Subscribe
+        description: subscribe button in the header
+        action: click
+  - prompt: Assert that the subscription page opens successfully.
+    commands:
+      - command: assert
+        expect: Unlimited access for less than $1/week is visible
+  - prompt: Verify that the page displays various subscription options.
+    commands:
+      - command: assert
+        expect: Monthly and Annual subscription options are visible
+  - prompt: Assert that no errors are present on the subscription page.
+    commands:
+      - command: assert
+        expect: no error messages like "Error" or "404" are visible
