@@ -1,0 +1,24 @@
+version: 4.2.25
+session: 67e6d4f0407679965ad1935c
+steps:
+  - prompt: Find and click on the search icon or input.
+    commands:
+      - command: focus-application
+        name: Google Chrome
+      - command: hover-image
+        description: search icon at the top right of the CNN webpage
+        action: click
+      - command: hover-image
+        description: search icon at the top right of the CNN webpage
+        action: click
+      - command: type
+        text: earthquake
+  - prompt: Press the enter key to submit the search.
+    commands:
+      - command: press-keys
+        keys:
+          - enter
+  - prompt: Assert that search results are displayed.
+    commands:
+      - command: assert
+        expect: search results related to earthquake are displayed
