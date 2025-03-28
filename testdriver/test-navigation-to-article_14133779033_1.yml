@@ -1,0 +1,25 @@
+version: 4.2.25
+session: 67e6d501407679965ad1935e
+steps:
+  - prompt: Click on the headline of the featured article.
+    commands:
+      - command: hover-text
+        text: Leaked chat may have damaged US intel efforts
+        description: headline of the featured article
+        action: click
+  - prompt: Assert that the article page opens and displays the content correctly.
+    commands:
+      - command: assert
+        expect: >-
+          Officials say texts sent by Waltz, Ratcliffe in Signal chat may have
+          damaged US’ ongoing ability to gather intel on Houthis
+  - prompt: Verify that the page contains the correct article title and text.
+    commands:
+      - command: assert
+        expect: >-
+          Officials say texts sent by Waltz, Ratcliffe in Signal chat may have
+          damaged US’ ongoing ability to gather intel on Houthis
+  - prompt: Assert that there are no unexpected errors displayed on the article page.
+    commands:
+      - command: assert
+        expect: no error messages like 404, 500, or Error are displayed on the page
